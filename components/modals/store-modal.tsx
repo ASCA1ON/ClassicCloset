@@ -38,9 +38,7 @@ export const StoreModal = () => {
     try {
         setLoading(true);
         const response = await axios.post('/api/stores', values);
-        console.log('re ',response);
-        
-        // window.location.assign(`/${response.data.id}`);
+        window.location.assign(`/${response.data.id}`);   // ? to get complete refresh
     } catch (error) {
           console.log(error);
         toast.error('Something went wrong');

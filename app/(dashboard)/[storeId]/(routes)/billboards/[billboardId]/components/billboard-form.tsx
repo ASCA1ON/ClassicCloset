@@ -141,7 +141,6 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
                       onRemove={() => field.onChange('')}
                     />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />

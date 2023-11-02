@@ -5,21 +5,20 @@ import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
+import { DataTable } from "@/components/ui/data-table";
+import { BillboardColumn, columns } from "./columns";
+import { ApiList } from "@/components/ui/api-list";
 
-// import { columns, BillboardColumn } from "./columns";
+interface BillboardClientProps {
+    data: BillboardColumn[]
+  }
 
-// interface BillboardClientProps {
-//     data: BillboardColumn[];
-//   }
-
-//   export const BillboardClient: React.FC<BillboardClientProps> = ({
-export const BillboardClient = () =>
-  // data
-  //   })=>
-  {
+  export const BillboardClient: React.FC<BillboardClientProps> = ({
+  data
+    })=>{
     const params = useParams();
     const router = useRouter();
-    const data= [1,2,3]
+    
     return (
       <>
         <div className="flex items-center justify-between">
@@ -34,10 +33,10 @@ export const BillboardClient = () =>
           </Button>
         </div>
         <Separator />
-      {/* <DataTable searchKey="label" columns={columns} data={data} /> */}
+      <DataTable searchKey="label" columns={columns} data={data} />
       <Heading title="API" description="API Calls for Billboards" />
       <Separator />
-      {/* <ApiList entityName="billboards" entityIdName="billboardId" /> */}
+      <ApiList entityName="billboards" entityIdName="billboardId" />
       </>
     );
   };
